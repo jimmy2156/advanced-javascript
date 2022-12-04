@@ -108,4 +108,76 @@
 //           return true
 //         return false
 //  }
-// console.log(includes(numbers, 5))
+// // console.log(includes(numbers, 5))
+// const numbers = [1,2,3,4]
+// function move(array, index, offset) {
+//     const newValue = array[index]
+//     console.log(newValue)
+//    const newArray = array.splice(0, offset, newValue)
+//    return newArray
+// }
+// console.log(move(numbers, 0, 1))
+// const numbers = [1,2,3,4,1,1,1,1]
+// function countOccurences(array, searchElement) {
+//    let count = 0
+//    for (let element of array)
+//      if (element === searchElement) {
+//       count++
+//      }
+//     return count
+// }
+// console.log(countOccurences(numbers, 1))
+// const numbers = [1,2,3,4,5]
+// function max(array) {
+//  if (array.length === 0)
+//    return undefined
+//   let max = array[0]
+//   for (let i = 0; i < array.length; i++)
+//     if (array[i] > max)
+//       max = array[i]
+//     return max
+// }
+// console.log(max(numbers))
+// function getMax(array) {
+//   return array.reduce((accumlator, currentValue) => {
+//     if (accumlator < currentValue) return currentValue
+//     else return accumlator
+//   } )
+// }
+// console.log(getMax(numbers))
+// const movies = [
+//   {title: "a", year: 2018, rating: 4.5},
+//   {title: "b", year: 2018, rating: 4.7},
+//   {title: "c", year: 2018, rating: 3},
+//   {title: "d", year: 2017, rating: 4.5},
+// ];
+// function sortingMovies(movies) {
+//   const titles = movies.filter(movie => {
+//     if (movie.year === 2018 && movie.rating > 4)
+//       return movie
+//   }).map(movie => movie.title)
+//   return titles
+// }
+// console.log(sortingMovies(movies))
+// function sum(...args) {
+//   return args.reduce((a,b) => a * b)
+// }
+// console.log(sum(1,2,3,4))
+// function totalPrice(principal, rate, year = 2) {
+//   return principal * rate * year
+// }
+// console.log(totalPrice(2,2,4))
+const person = {
+  firstName: "Mosh",
+  lastName: "Hamedani",
+  get fullName() {
+    return `${person.firstName} ${person.lastName}`
+  },
+  set fullName(value) {
+    const parts = value.split(' ')
+    this.firstName = parts[0]
+    this.lastName = parts[1]
+  }
+}
+person.fullName = "Gaganjot singh"
+console.log(person.fullName)
