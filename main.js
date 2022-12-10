@@ -167,17 +167,95 @@
 //   return principal * rate * year
 // }
 // console.log(totalPrice(2,2,4))
-const person = {
-  firstName: "Mosh",
-  lastName: "Hamedani",
-  get fullName() {
-    return `${person.firstName} ${person.lastName}`
-  },
-  set fullName(value) {
-    const parts = value.split(' ')
-    this.firstName = parts[0]
-    this.lastName = parts[1]
+// const person = {
+//   firstName: "Mosh",
+//   lastName: "Hamedani",
+//   get fullName() {
+//     return `${person.firstName} ${person.lastName}`
+//   },
+//   set fullName(value) {
+//     const parts = value.split(' ')
+//     this.firstName = parts[0]
+//     this.lastName = parts[1]
+//   }
+// }
+// person.fullName = "Gaganjot singh"
+// console.log(person.fullName)
+//this keyword
+// function factoryFunction() {
+//   console.log(this)
+// }
+// factoryFunction()
+// function Newvalue(value) {
+//   this.value = value,
+//   this.draw = function () {
+//     console.log(value)
+//   }
+// }
+// const newvalue = new Newvalue("a")
+// console.log(newvalue.draw())
+
+// const newObject = {
+//   firstName: "Mosh",
+//   lastName: "Hamedani",
+//   newArray: [1,2,3,4,5,6,67,7],
+//   getNewArray() {
+//     this.newArray.forEach(array => console.log(array))
+
+//   }
+// }
+// newObject.getNewArray()
+// function sum(...numbers) {
+//   let total = 0
+//   for (let number of numbers)
+//     total += number
+//   return total
+// }
+// console.log(sum(1,2,3,4,5))
+// function sumArray(...numbers) {
+//   if (numbers.isArray === true) {
+//     numbers.reduce((a,b) => a + b)
+//   } else {
+//     let total = 0
+//     for (let number of numbers)
+//       total += number
+//     return total
+//   }
+// }
+// console.log(sumArray([1,2,3,4,5]))
+// const circle = {
+//   radius: 6,
+//   get area() {
+//     console.log(Math.PI*this.radius * this.radius)
+//   },
+  
+// } 
+// circle.radius = 4
+// console.log(circle.area)
+function Stopwatch() {
+  let duration, running, startTime, endTime = 0;
+  this.start = function() {
+    if (running) {
+      console.log("please stop the watch")
+    }
+   running = true;
+   startTime = new Date()
+  };
+  this.stop = function() {
+    if (!running) {
+      console.log("please start the watch")
+    }
+    running = false;
+    endTime = new Date()
+  };
+  this.reset = function() {
+    duration = 0;
+  
+    totalTime = endTime - startTime / 1000
+    console.log(`Your total time is ${totalTime}`)
   }
 }
-person.fullName = "Gaganjot singh"
-console.log(person.fullName)
+const s1 = new Stopwatch()
+s1.start()
+s1.stop()
+console.log(s1.reset)
